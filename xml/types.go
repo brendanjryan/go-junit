@@ -7,7 +7,7 @@ import (
 // Suites is a collection of JUnit test suites.
 type Suites struct {
 	XMLName  xml.Name `xml:"testsuites"`
-	Id       string   `xml:"id,attr"`
+	ID       string   `xml:"id,attr"`
 	Name     string   `xml:"name,attr"`
 	Tests    int      `xml:"tests,attr"`
 	Failures int      `xml:"failures,attr"`
@@ -20,7 +20,7 @@ type Suites struct {
 // testcases.
 type Suite struct {
 	XMLName    xml.Name   `xml:"testsuite"`
-	Id         string     `xml:"id,attr"`
+	ID         string     `xml:"id,attr"`
 	Tests      int        `xml:"tests,attr"`
 	Failures   int        `xml:"failures,attr"`
 	Time       string     `xml:"time,attr"`
@@ -33,10 +33,11 @@ type Suite struct {
 // TestCase is a single test case with its result.
 type TestCase struct {
 	XMLName xml.Name `xml:"testcase"`
+	ID      string   `xml:"id,attr"`
 	Name    string   `xml:"name,attr"`
 	Time    string   `xml:"time,attr"`
 
-	Failure *Failure `xml:"failure,omitempty"`
+	Failures []Failure
 }
 
 // Property represents a key/value pair used to define properties.
