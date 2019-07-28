@@ -23,7 +23,7 @@ type Suite struct {
 	ID         string     `xml:"id,attr"`
 	Tests      int        `xml:"tests,attr"`
 	Failures   int        `xml:"failures,attr"`
-	Time       string     `xml:"time,attr"`
+	Time       float64    `xml:"time,attr"`
 	Name       string     `xml:"name,attr"`
 	Properties []Property `xml:"properties>property,omitempty"`
 
@@ -35,7 +35,7 @@ type TestCase struct {
 	XMLName xml.Name `xml:"testcase"`
 	ID      string   `xml:"id,attr"`
 	Name    string   `xml:"name,attr"`
-	Time    string   `xml:"time,attr"`
+	Time    float64  `xml:"time,attr"`
 
 	Failures []Failure
 }
